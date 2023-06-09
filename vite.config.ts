@@ -5,8 +5,8 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   build: {
     lib: {
-      entry: "src/components/chat-ui/ChatPopUp.tsx",
-      name: "ChatPopUp",
+      entry: "src/ChatApp.tsx",
+      name: "ChatApp",
       formats: ["umd"],
     },
   },
