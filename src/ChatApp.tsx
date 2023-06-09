@@ -12,7 +12,7 @@ export interface ScriptTagProps {
   stream?: boolean;
 }
 
-function App({
+function ChatApp({
   apiKey,
   botId,
   title,
@@ -39,4 +39,4 @@ function App({
   )
 }
 
-export default App
+export default ChatApp
