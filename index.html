@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
+    <link rel="stylesheet" href="dist/style.css">
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <div id="my-component-root"></div>
+    <script src="/dist/chat-script-tag-test.umd.cjs"></script> <!-- Make sure this path is correct -->
+    <script>
+      console.log(window.ChatApp);
+      const props = {
+        apiKey: "ba41c60c65d874c5340985ad4fcda69a",
+        botId: 'ski-warehouse-chat',
+        title:'Ski Warehouse',
+        stream: false
+      };
+      window.ChatApp.mountChatApp(document.getElementById('my-component-root'), props);
+    </script>    
   </body>
 </html>

@@ -42,6 +42,7 @@ function ChatApp({
 
 export default ChatApp
 
-ChatApp.mount = function (el: ReactDOM.Container, props: ScriptTagProps) {
-  ReactDOM.render(<ChatPopUp {...props} />, el);
+// Separate mount function
+export function mountChatApp(el: HTMLElement, props: ScriptTagProps) {
+  ReactDOM.render(<ChatApp {...props} />, el);
 }

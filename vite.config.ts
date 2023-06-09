@@ -10,5 +10,9 @@ export default defineConfig({
       formats: ["umd"],
     },
   },
+  define: {
+    "process.env.NODE_ENV": JSON.stringify("production"),
+    "process.env": "process.env",
+  },
   plugins: [react()],
 });
