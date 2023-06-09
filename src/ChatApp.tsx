@@ -1,5 +1,6 @@
 import { ChatPopUp } from "@yext/chat-ui-react"
 import { ChatHeadlessProvider } from "@yext/chat-headless-react";
+import ReactDOM from 'react-dom';
 import "@yext/chat-ui-react/bundle.css";
 
 export interface ScriptTagProps {
@@ -40,3 +41,7 @@ function ChatApp({
 }
 
 export default ChatApp
+
+ChatApp.mount = function (el: ReactDOM.Container, props: ScriptTagProps) {
+  ReactDOM.render(<ChatPopUp {...props} />, el);
+}
