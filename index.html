@@ -1,20 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="dist/style.css">
+    <!-- Import the Yext Chat CSS Bundle -->
+    <link rel="stylesheet" href="dist/style.css" />
+    <style>
+      /* You can override styles by targeting the various yext-chat classes */
+      /* Here are just a few examples: */
+      yext-chat-panel {
+        background-color: #fff;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+      }
+      yext-chat-header {
+        background-color: #0084ff;
+        color: #fff;
+        padding: 10px;
+      }
+      yext-chat-panel__message-bubble__bot {
+        background-color: #f5f8fa;
+        color: #1d2129;
+      }
+      yext-chat-panel__message-bubble__user {
+        background-color: #0084ff;
+        color: #fff;
+      }
+    </style>
   </head>
   <body>
-    <div id="my-component-root"></div>
-    <script src="/dist/chat-script-tag-test.umd.cjs"></script> <!-- Make sure this path is correct -->
+    <!-- Define a DOM element to mount the component onto -->
+    <div id="yext-chat-app-root"></div>
+      <!-- Import the Yext Chat Javascript Bundle -->
+    <script src="/dist/chat-script-tag-test.umd.cjs"></script>
     <script>
-      console.log(window.ChatApp);
       const props = {
         apiKey: "ba41c60c65d874c5340985ad4fcda69a",
-        botId: 'ski-warehouse-chat',
-        title:'Ski Warehouse',
-        stream: false
+        botId: "ski-warehouse-chat",
+        title: "Ski Warehouse",
+        stream: false,
       };
-      window.ChatApp.mountChatApp(document.getElementById('my-component-root'), props);
-    </script>    
+      window.ChatApp.mountChatApp(
+        document.getElementById("yext-chat-app-root"),
+        props
+      );
+    </script>
   </body>
 </html>
